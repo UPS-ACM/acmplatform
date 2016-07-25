@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Place searches</title>
+  <title>Log Jam Experience</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
+  
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBInghLZWYDJBA789Ga2_2qTmM5DLb1nno&libraries=places"></script>
+
     <script>
 
       var map
@@ -18,7 +20,44 @@
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
-        map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+        var styles = [
+          {
+            "featureType": "road.local",
+            "elementType": "geometry.stroke",
+            "stylers": [
+              { "visibility": "on" },
+              { "color": "#000000" }
+            ]
+          },{
+            "elementType": "labels",
+            "stylers": [
+              { "visibility": "off" }
+            ]
+          },{
+            "elementType": "geometry.fill",
+            "stylers": [
+              { "color": "#800000" },
+              { "weight": 4 },
+              { "visibility": "on" },
+              { "saturation": -43 }
+            ]
+          },{
+          },{
+            "featureType": "road.local",
+            "elementType": "geometry.fill",
+            "stylers": [
+              { "visibility": "on" },
+              { "color": "#ffffff" }
+            ]
+          },{
+          }
+        ];
+
+        map.setOptions({styles: styles});
+
+        map.data.loadGeoJson('https://storage.googleapis.com/mapsdevsite/json/google.json');
 
         var contentString = ['<div id="content"> <div id="siteNotice"> </div>'+
         '<h1 id="firstHeading" class="firstHeading">The Something Club</h1>'+
@@ -70,12 +109,18 @@
             infoBox.open(marker.get('map'), marker);
           })
         }
+
+      
       } // end of intitialize()
       // actually load the map
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
   </head>
+
+
   <body>
-    <div id ="googleMap" style ="width:900px;height:500px;"></div>
+  <CENTER><h1>LOG JAM EXPERIENCE</h1>
+    <div id ="googleMap" style ="width:900px;height:700px;"></div>
+    </CENTER>
   </body>
 </html>
