@@ -1,68 +1,79 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Place searches</title>
+  <title>LogJam</title>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBInghLZWYDJBA789Ga2_2qTmM5DLb1nno&libraries=places"></script>
     <script>
 
       var map
-      var myCenter = new google.maps.LatLng(47.262260,-122.481710);
-      var positions = [{lat:47.261800, lng:-122.481900}, {lat:47.261800, lng:-122.481800}, {lat:47.261800, lng:-122.481700}, {lat:47.261800, lng:-122.481600}, {lat:47.261800, lng:-122.481500}];
+      var myCenter = new google.maps.LatLng(47.262190,-122.481500);
+
+      var data = [
+                  [{lat:47.261810, lng:-122.481900},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'],
+                  [{lat:47.261765, lng:-122.481900},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
+                  [{lat:47.261810, lng:-122.481800}, 
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
+                  [{lat:47.261765, lng:-122.481800}, 
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
+                  [{lat:47.261810, lng:-122.481700},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
+                  [{lat:47.261765, lng:-122.481700},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
+                  [{lat:47.261810, lng:-122.481600},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
+                  [{lat:47.261765, lng:-122.481600},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
+                  [{lat:47.261810, lng:-122.481500},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">ACM</h1><div id="bodyContent"><p><b>ACM</b>, also referred to as <b>The BEST Club</b>, is THE BEST CLUB</div> </div>'],
+                  [{lat:47.261765, lng:-122.481500},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'],
+                  [{lat:47.261810, lng:-122.481400},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'],
+                  [{lat:47.261765, lng:-122.481400},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'],
+                  [{lat:47.261810, lng:-122.481300},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'],
+                  [{lat:47.261765, lng:-122.481300},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'],
+                  [{lat:47.261810, lng:-122.481200},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'],
+                  [{lat:47.261765, lng:-122.481200},
+                  '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>']];
+      
       function initialize(){
         var mapProp = {
           center: myCenter,
-          zoom:18,
+          zoom:19,
           disableDefaultUI:false,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
         map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-        var contentString = ['<div id="content"> <div id="siteNotice"> </div>'+
-        '<h1 id="firstHeading" class="firstHeading">The Something Club</h1>'+
-        '<div id="bodyContent">'+
-        '<p><b>The Something Club</b>, also referred to as <b>The Club</b>, is a large ' +
-        'sandstone rock formation in the southern part of the '+
-        'Northern Territory, central Australia.'+
-        '</div> </div>', 
-        '<div id="content"> <div id="siteNotice"> </div>'+
-        '<h1 id="firstHeading" class="firstHeading">The Something Else Club</h1>'+
-        '<div id="bodyContent">'+
-        '<p><b>The Something Else Club</b>, also referred to as <b>The Other Club</b>, is also a large ' +
-        'sandstone rock formation in the southern part of the '+
-        'Northern Territory, central Australia.'+
-        '</div> </div>',
-        '<div id="content"> <div id="siteNotice"> </div>'+
-        '<h1 id="firstHeading" class="firstHeading">The Third Club</h1>'+
-        '<div id="bodyContent">'+
-        '<p><b>The Third Club</b>, also referred to as <b>The Other, Other Club</b>, is also a large ' +
-        'sandstone rock formation in the southern part of the '+
-        'Northern Territory, central Australia.'+
-        '</div> </div>',
-        '<div id="content"> <div id="siteNotice"> </div>'+
-        '<h1 id="firstHeading" class="firstHeading">The Fourth Club</h1>'+
-        '<div id="bodyContent">'+
-        '<p><b>The Fourth Club</b>, also referred to as <b>The Totally Different Club</b>, is also a large ' +
-        'sandstone rock formation in the southern part of the '+
-        'Northern Territory, central Australia.'+
-        '</div> </div>',
-        '<div id="content"> <div id="siteNotice"> </div>'+
-        '<h1 id="firstHeading" class="firstHeading">ACM</h1>'+
-        '<div id="bodyContent">'+
-        '<p><b>ACM</b>, also referred to as <b>The BEST Club</b>, is THE BEST CLUB</div> </div>'
-        ];
         var infoBox = new google.maps.InfoWindow({
           content: 'nothing yet',
           maxWidth: 300
         });
-        for (var i = 0; i<positions.length; i++){
+
+        // potential icons i guess
+        var image = //'http://i.turner.ncaa.com/dr/ncaa/ncaa7/release/sites/default/files/images/logos/schools/p/puget-sound.40.png';
+        //'http://soundideas.pugetsound.edu/assets/institution_icons/2068434.png'; //hatchet
+        'http://tartarus.rpgclassics.com/ss2/item/0026.gif';
+        //'https://s-media-cache-ak0.pinimg.com/avatars/univpugetsound-61_30.jpg';
+        //'http://www.htmlcsscolor.com/preview/16x16/660000.png';
+        //'http://icons.veryicon.com/ico/System/Led/clipboard%20text.ico';//'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+        
+        for (var i = 0; i<data.length; i++){
         var marker = new google.maps.Marker({
             map : map,
-            position: positions[i]
+            position: data[i][0],//positions[i],
+            //icon: image
           });
-          attachInfo(marker, contentString[i])
+          attachInfo(marker, data[i][1]+'table number '+(i+1))//contentString[i])
         }
         function attachInfo(marker, info){
           marker.addListener('click', function(){
