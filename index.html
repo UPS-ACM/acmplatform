@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>LogJam</title>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <meta charset="utf-8">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBInghLZWYDJBA789Ga2_2qTmM5DLb1nno&libraries=places"></script>
+    <title>LogJam</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #googlMap {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id ="googleMap"></div> <!--style ="width:900px;height:500px;"-->
     <script>
 
       var map
       var myCenter = new google.maps.LatLng(47.262190,-122.481500);
 
       var data = [
-                  [{lat:47.261830, lng:-122.481900},
+                  [{lat:47.261830, lng:-122.481900},  // 1
                   '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'],
-                  [{lat:47.261765, lng:-122.481900},
+                  [{lat:47.261765, lng:-122.481900},  // 2
                   '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
-                  [{lat:47.261830, lng:-122.481800}, 
+                  [{lat:47.261830, lng:-122.481800},  // 3
                   '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
-                  [{lat:47.261765, lng:-122.481800}, 
+                  [{lat:47.261765, lng:-122.481800},  // 4
                   '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
-                  [{lat:47.261830, lng:-122.481700},
+                  [{lat:47.261830, lng:-122.481700},  // 5
                   '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
-                  [{lat:47.261765, lng:-122.481700},
+                  [{lat:47.261765, lng:-122.481700},  // 6
                   '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
                   [{lat:47.261830, lng:-122.481600},
                   '<div id="content"> <div id="siteNotice"> </div><h1 id="firstHeading" class="firstHeading">CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>'], 
@@ -85,8 +97,6 @@
       // actually load the map
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-  </head>
-  <body>
-    <div id ="googleMap" style ="width:900px;height:500px;"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBInghLZWYDJBA789Ga2_2qTmM5DLb1nno&libraries=places" async defer></script>
   </body>
 </html>
