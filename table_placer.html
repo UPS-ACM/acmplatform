@@ -28,14 +28,20 @@
 
         // potential icons i guess
         var image = 'http://tartarus.rpgclassics.com/ss2/item/0026.gif';
+
+        var pos = myCenter;
+        var tablePos = new google.maps.Marker({
+        	map: map,
+        	position: pos,
+        	icon: image
+        })
+        tablePos.setVisible(false);
         
          map.addListener('click', function(e){
-        	var marker = new google.maps.Marker({
-        		map: map,
-        		position: e.latLng,
-        		icon: image
-        	});
+         	tablePos.setVisible(true);
+         	tablePos.setPosition(e.latLng);
         	// can use this to write to a file that the other page is reading from, e.latLng.lat(), e.latLng.lng()
+        	pos = e.latLng();
         })
          /*
         for (var i = 0; i<data.length; i++){
