@@ -27,14 +27,17 @@
         map.setTilt(0);
 
         // potential icons i guess
-        var image = //'http://i.turner.ncaa.com/dr/ncaa/ncaa7/release/sites/default/files/images/logos/schools/p/puget-sound.40.png';
-        //'http://soundideas.pugetsound.edu/assets/institution_icons/2068434.png'; //hatchet
-        'http://tartarus.rpgclassics.com/ss2/item/0026.gif';
-        //'https://s-media-cache-ak0.pinimg.com/avatars/univpugetsound-61_30.jpg';
-        //'http://www.htmlcsscolor.com/preview/16x16/660000.png';
-        //'http://icons.veryicon.com/ico/System/Led/clipboard%20text.ico';//'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
-    
-        //*
+        var image = 'http://tartarus.rpgclassics.com/ss2/item/0026.gif';
+        
+         map.addListener('click', function(e){
+        	var marker = new google.maps.Marker({
+        		map: map,
+        		position: e.latLng,
+        		icon: image
+        	});
+        	// can use this to write to a file that the other page is reading from, e.latLng.lat(), e.latLng.lng()
+        })
+         /*
         for (var i = 0; i<data.length; i++){
         var marker = new google.maps.Marker({
             map: map,
@@ -49,8 +52,7 @@
             infoBox.open(marker.get('map'), marker);
           })
         }
-        //*/
-       
+        */
       } // end of intitialize()
       // actually load the map
       google.maps.event.addDomListener(window, 'load', initialize);
