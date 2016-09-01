@@ -9,7 +9,18 @@
     <script>
 
       var map
-      var myCenter = new google.maps.LatLng(47.262190,-122.481500);
+      var avgLat = 0.0
+      var avgLng = 0.0
+      function findCenter(){
+        for (var i = 0; i<data.length; i++){
+          avgLat+=data[i][0].lat,
+          avgLng+=data[i][0].lng
+        }
+      }
+      findCenter()
+      avgLat/=data.length
+      avgLng/=data.length
+      var myCenter = new google.maps.LatLng(avgLat,avgLng);//new google.maps.LatLng(47.262190,-122.481500);
       
       function initialize(){
         var mapProp = {
