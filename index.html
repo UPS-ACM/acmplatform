@@ -10,18 +10,23 @@
     <script>
 
       var map
-      var avgLat = 0.0
-      var avgLng = 0.0
-      function findCenter(){
-        for (var i = 0; i<data.length; i++){
-          avgLat+=data[i][0].lat,
-          avgLng+=data[i][0].lng
+      var myCenter
+      if (data.length==0){
+        myCenter = new google.maps.LatLng(47.262190,-122.481500);
+      }else {
+        var avgLat = 0.0
+        var avgLng = 0.0
+        function findCenter(){
+          for (var i = 0; i<data.length; i++){
+            avgLat+=data[i][0].lat,
+            avgLng+=data[i][0].lng
+          }
         }
+        findCenter()
+        avgLat/=data.length
+        avgLng/=data.length
+        myCenter = new google.maps.LatLng(avgLat,avgLng);
       }
-      findCenter()
-      avgLat/=data.length
-      avgLng/=data.length
-      var myCenter = new google.maps.LatLng(avgLat,avgLng);//new google.maps.LatLng(47.262190,-122.481500);
 
       var markers = [];
       
@@ -53,30 +58,36 @@
     
         //*
         var getCenterTag = document.getElementById('centerthing');
-        for (i = 0; i<data.length; i++){
-          
-          marker = new google.maps.Marker({
-            map: map,
-            position: data[i][0],//positions[i],
-            icon: image
-          });
-          google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function(){
-              infoBox.setContent(data[i][1]);
-              infoBox.open(map, marker);  
-            }
-          })(marker, i));
-          //attachInfo(marker, i);
-          markers.push(marker);
+        if (data.length==0){
+          var noClubs = document.createElement('h3');
+          noClubs.appendChild(document.createTextNode('No clubs have signed up yet!'));
+          getCenterTag.appendChild(noClubs);
+        }else {
+          for (i = 0; i<data.length; i++){
+            
+            marker = new google.maps.Marker({
+              map: map,
+              position: data[i][0],//positions[i],
+              icon: image
+            });
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+              return function(){
+                infoBox.setContent(data[i][1]);
+                infoBox.open(map, marker);  
+              }
+            })(marker, i));
+            //attachInfo(marker, i);
+            markers.push(marker);
 
-          var createA = document.createElement('a');
-          var createAText = document.createTextNode(data[i][2]);
-          createA.setAttribute("href", "#");
-          createA.setAttribute("onClick", "myClick("+i+");");
-          createA.appendChild(createAText);
-          getCenterTag.appendChild(createA);
-          getCenterTag.appendChild(document.createElement('br'));
-          getCenterTag.appendChild(document.createElement('br'));
+            var createA = document.createElement('a');
+            var createAText = document.createTextNode(data[i][2]);
+            createA.setAttribute("href", "#");
+            createA.setAttribute("onClick", "myClick("+i+");");
+            createA.appendChild(createAText);
+            getCenterTag.appendChild(createA);
+            getCenterTag.appendChild(document.createElement('br'));
+            getCenterTag.appendChild(document.createElement('br'));
+          }
         }
 
         function attachInfo(marker, info){
@@ -100,24 +111,6 @@
     <div id ="map" style ="width:100g%;height:400px;"></div>
     <h2>Find your favorite clubs!</h2>
     <div id="centerthing"></div>
-    <!--
-    <a href="#" onClick="myClick(0);">Club number 1</a><br>
-    <a href="#" onClick="myClick(1);">Club number 2</a><br>
-    <a href="#" onClick="myClick(2);">Club number 3</a><br>
-    <a href="#" onClick="myClick(3);">Club number 4</a><br>
-    <a href="#" onClick="myClick(4);">Club number 5</a><br>
-    <a href="#" onClick="myClick(5);">Club number 6</a><br>
-    <a href="#" onClick="myClick(6);">Club number 7</a><br>
-    <a href="#" onClick="myClick(7);">Club number 8</a><br>
-    <a href="#" onClick="myClick(8);">Club number 9</a><br>
-    <a href="#" onClick="myClick(9);">Club number 10</a><br>
-    <a href="#" onClick="myClick(10);">Club number 11</a><br>
-    <a href="#" onClick="myClick(11);">Club number 12</a><br>
-    <a href="#" onClick="myClick(12);">Club number 13</a><br>
-    <a href="#" onClick="myClick(13);">Club number 14</a><br>
-    <a href="#" onClick="myClick(14);">Club number 15</a><br>
-    <a href="#" onClick="myClick(15);">Club number 16</a><br>
-  -->
     </center>
   </body>
 </html>
