@@ -9,22 +9,31 @@
   <script src="data.js"></script>
     <script>
 
+      var sortedData = [];
+
       var map
       var myCenter
       if (data.length==0){
         myCenter = new google.maps.LatLng(47.262190,-122.481500);
       }else {
+        sortedData  = data.sort(function(a,b){
+          var club1 = a[2].toUpperCase();
+          var club2 = b[2].toUpperCase();
+          if (club1<club2) return -1;
+          if (club1>club2) return 1;
+          return 0;
+        });
         var avgLat = 0.0
         var avgLng = 0.0
         function findCenter(){
-          for (var i = 0; i<data.length; i++){
-            avgLat+=data[i][0].lat,
-            avgLng+=data[i][0].lng
+          for (var i = 0; i<sortedData.length; i++){
+            avgLat+=sortedData[i][0].lat,
+            avgLng+=sortedData[i][0].lng
           }
         }
         findCenter()
-        avgLat/=data.length
-        avgLng/=data.length
+        avgLat/=sortedData.length
+        avgLng/=sortedData.length
         myCenter = new google.maps.LatLng(avgLat,avgLng);
       }
 
@@ -57,22 +66,22 @@
         //'http://icons.veryicon.com/ico/System/Led/clipboard%20text.ico';//'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
     
         //*
-        var getCenterTag = document.getElementById('centerthing');
-        if (data.length==0){
+        var getCenterTag = document.getElementById('clublinks');
+        if (sortedData.length==0){
           var noClubs = document.createElement('h3');
           noClubs.appendChild(document.createTextNode('No clubs have signed up yet!'));
           getCenterTag.appendChild(noClubs);
         }else {
-          for (i = 0; i<data.length; i++){
+          for (i = 0; i<sortedData.length; i++){
             
             marker = new google.maps.Marker({
               map: map,
-              position: data[i][0],//positions[i],
+              position: sortedData[i][0],//positions[i],
               icon: image
             });
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
               return function(){
-                infoBox.setContent(data[i][1]);
+                infoBox.setContent(sortedData[i][1]);
                 infoBox.open(map, marker);  
               }
             })(marker, i));
@@ -80,7 +89,7 @@
             markers.push(marker);
 
             var createA = document.createElement('a');
-            var createAText = document.createTextNode(data[i][2]);
+            var createAText = document.createTextNode(sortedData[i][2]);
             createA.setAttribute("href", "#");
             createA.setAttribute("onClick", "myClick("+i+");");
             createA.appendChild(createAText);
@@ -92,7 +101,7 @@
 
         function attachInfo(marker, info){
           marker.addListener('click', function(){
-            infoBox.setContent(data[info][1]);//info);
+            infoBox.setContent(sortedData[info][1]);//info);
             //infoBox.open(marker.get('map'), marker);
             infoBox.open(map, marker);
           })
@@ -110,7 +119,7 @@
     <center>
     <div id ="map" style ="width:100g%;height:400px;"></div>
     <h2>Find your favorite clubs!</h2>
-    <div id="centerthing"></div>
+    <div id="clublinks"></div>
     </center>
   </body>
 </html>
