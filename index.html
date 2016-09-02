@@ -87,14 +87,13 @@
             })(marker, i));
             //attachInfo(marker, i);
             markers.push(marker);
-
+            getCenterTag.appendChild(document.createElement('br'));
             var createA = document.createElement('a');
             var createAText = document.createTextNode(sortedData[i][2]);
             createA.setAttribute("href", "#");
             createA.setAttribute("onClick", "myClick("+i+");");
             createA.appendChild(createAText);
             getCenterTag.appendChild(createA);
-            getCenterTag.appendChild(document.createElement('br'));
             getCenterTag.appendChild(document.createElement('br'));
           }
         }
@@ -117,7 +116,7 @@
   </head>
   <body>
     <center>
-    <h2>Find your favorite clubs!</h2>
+    <h2>Logjam 2016</h2>
     <div id ="map" style ="width:100g%;height:400px;"></div>
     <div id="clublinks"></div>
     </center>
