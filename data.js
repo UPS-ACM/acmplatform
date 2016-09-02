@@ -7,21 +7,17 @@ var data = [
 	//have a womens ACM dedicating to promoting women in computing. ACM meets on Sundays from 5pm beginning on Sunday the 11th.</div></div>'],
 	
 	//test clubs
-/*
-	[{lat:47.261830, lng:-122.481900},
-	'<div id="content"> <div id="siteNotice"> </div><h1>ACM</h1><div id="bodyContent"><p><b>ACM</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div></div>',
-	"ACM"],
-	[{lat:47.261765, lng:-122.481900},
-	'<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
-	"Bananas"],
-	[{lat:47.261830, lng:-122.481800},
-	'<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
-	"zebras"], 
-	[{lat:47.261765, lng:-122.481800},
-	'<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
-	"lions"], 
-	[{lat:47.261830, lng:-122.481700},
-	'<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
-	"tigers, oh my"]
-	*/
-];
+
+	// [{lat:47.261830, lng:-122.481900},
+	// '<div id="content"> <div id="siteNotice"> </div><h1>ACM</h1><div id="bodyContent"><p><b>ACM</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div></div>',
+	// "ACM"],
+	// [{lat:47.261765, lng:-122.481900},
+	// '<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
+	// "Bananas"],
+	// [{lat:47.261830, lng:-122.481800},
+	// '<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
+	// "zebras"], 
+	// [{lat:47.261765, lng:-122.481800},
+	// '<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
+	// "lions"]
+	
