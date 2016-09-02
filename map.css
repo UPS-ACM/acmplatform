@@ -4,5 +4,19 @@ h2 {
 	background-color: #660000;
 }
 a {
-	color: #660000;
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 25px;
+}
+body {
+    /*background-image: url("tiled.png");*/
+    background-color: #E3E3E3;
+}
+
+#clublinks {
+    border-radius: 25px;
+    background: #660000;
+    padding: 20px;
+    width: 50%;
+    height: 100%;
 }
