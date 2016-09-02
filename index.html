@@ -21,6 +21,8 @@
       avgLat/=data.length
       avgLng/=data.length
       var myCenter = new google.maps.LatLng(avgLat,avgLng);//new google.maps.LatLng(47.262190,-122.481500);
+
+      var markers = [];
       
       function initialize(){
         var mapProp = {
@@ -31,11 +33,14 @@
         };
 
         map = new google.maps.Map(document.getElementById("map"),mapProp);
-        var infoBox = new google.maps.InfoWindow({
-          content: 'nothing yet',
-          maxWidth: 300
-        });
+
+        var marker, i;
+        var infoBox = new google.maps.InfoWindow();
+
         map.setTilt(0);
+        google.maps.event.addListener(map, 'click', function(){
+          infoBox.close();
+        })
 
         // potential icons i guess
         var image = //'http://i.turner.ncaa.com/dr/ncaa/ncaa7/release/sites/default/files/images/logos/schools/p/puget-sound.40.png';
@@ -46,31 +51,43 @@
         //'http://icons.veryicon.com/ico/System/Led/clipboard%20text.ico';//'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
     
         //*
-        for (var i = 0; i<data.length; i++){
-        var marker = new google.maps.Marker({
+        for (i = 0; i<data.length; i++){
+          marker = new google.maps.Marker({
             map: map,
             position: data[i][0],//positions[i],
             icon: image
           });
-          attachInfo(marker, data[i][1]+'table number '+(i+1))//contentString[i])
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function(){
+              infoBox.setContent(data[i][1]);
+              infoBox.open(map, marker);  
+            }
+          })(marker, i));
+          //attachInfo(marker, i);
+          markers.push(marker);
         }
+
         function attachInfo(marker, info){
           marker.addListener('click', function(){
-            infoBox.setContent(info);
-            infoBox.open(marker.get('map'), marker);
+            infoBox.setContent(data[info][1]);//info);
+            //infoBox.open(marker.get('map'), marker);
+            infoBox.open(map, marker);
           })
         }
-        //*/
-       
       } // end of intitialize()
       // actually load the map
       google.maps.event.addDomListener(window, 'load', initialize);
+      //*
+      function myClick(id){
+        google.maps.event.trigger(markers[id], 'click');
+      }//*/
     </script>
   </head>
   <body>
     <center>
     <div id ="map" style ="width:100g%;height:400px;"></div>
     </center>
+    <a href="#" onClick="myClick(0);">Test button</a>
   </body>
 </html>
 
