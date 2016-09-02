@@ -4,8 +4,8 @@ var data = [
 	//have a womens ACM dedicating to promoting women in computing. ACM meets on Sundays from 5pm beginning on Sunday the 11th.</div></div>'],
 //*
 	[{lat:47.261830, lng:-122.481900},  // 1
-	'<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div></div>',
-	"CLUB 1"],
+	'<div id="content"> <div id="siteNotice"> </div><h1>ACM</h1><div id="bodyContent"><p><b>ACM</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div></div>',
+	"ACM"],
 	[{lat:47.261765, lng:-122.481900},  // 2
 	'<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
 	"CLUB 2"],
@@ -17,7 +17,8 @@ var data = [
 	"CLUB 4"], 
 	[{lat:47.261830, lng:-122.481700},  // 5
 	'<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
-	"CLUB 5"], 
+	"CLUB 5"]//, 
+	/*
 	[{lat:47.261765, lng:-122.481700},  // 6
 	'<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
 	"CLUB 6"], 
@@ -51,5 +52,5 @@ var data = [
 	[{lat:47.261765, lng:-122.481200},
 	'<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
 	"CLUB 16"]
-	//*/
+	*/
 ];
