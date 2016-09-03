@@ -14,15 +14,32 @@ var data = [
 	'<div id="content"> <div id="siteNotice"> </div><h1>RDG</h1><div id="bodyContent"><p><b>RDG</b> The largest club on campus. A dance group who have danced their whole lives or never at all. Open to everyone.</div></div>',"RDG"],
 
 	[{lat:47.26221589515171, lng:-122.4810978770256},
-	'<div id="content"> <div id="siteNotice"> </div><h1>UPS Intervasity</h1><div id="bodyContent"><p><b>UPS Intervarsity</b> Come Kick it w/ us for some key chains doe.</div> </div>',"UPS Intervarsity"]
+	'<div id="content"> <div id="siteNotice"> </div><h1>UPS Intervasity</h1><div id="bodyContent"><p><b>UPS Intervarsity</b> Come Kick it w/ us for some key chains doe.</div> </div>',"UPS Intervarsity"],
 
-	[{lat:47.26221589515171, lng:-122.4810978770256},
-	'<div id="content"> <div id="siteNotice"> </div><h1>UPS Intervasity</h1><div id="bodyContent"><p><b>UPS Intervarsity</b> Come Kick it w/ us for some key chains doe.</div> </div>',"UPS Intervarsity"]
-	
-	// [{lat:47.261830, lng:-122.481800},
-	// '<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
-	// "zebras"], 
-	// [{lat:47.261765, lng:-122.481800},
-	// '<div id="content"> <div id="siteNotice"> </div><h1>CLUB NAME</h1><div id="bodyContent"><p><b>CLUB NAME</b> is all about CLUB DESCRIPTION. Enjoy leisurely activities, such as CLUB ACTIVITIES</div> </div>',
-	// "lions"]
+	[{lat:47.26220133302569, lng:-122.48101741075516},
+	'<div id="content"> <div id="siteNotice"> </div><h1>Yellow House (CICE)</h1><div id="bodyContent"><p><b>Yellow House (Center for Intercultural Engagement)</b> </div> </div>',"Yellow House (CICE)"],
+
+	[{lat:47.262170388494596, lng:-122.48102009296417},
+	'<div id="content"> <div id="siteNotice"> </div><h1>uMeth</h1><div id="bodyContent"> <p><b>uMeth-short for University of Methodists, </b> but open to all. A reconciling (AKA queer inclusive) Campus Ministry</div> </div>',"uMeth"],
+
+	[{lat:47.262095757492226, lng:-122.48109519481659},
+	'<div id="content"> <div id="siteNotice"> </div><h1>Needlecrafts</h1><div id="bodyContent"> <p><b>Sewing, knitting, & crocheting! </b> All skill levels welcome!</div> </div>',"Needlecrafts for Charity"],
+
+	// [{lat:47.262195872227394, lng:-122.48110055923462},
+	// '<div id="content"> <div id="siteNotice"> \
+	// </div><h1>Campus Cursive</h1>\
+	// <div id="bodyContent"> <p><b>\
+	// A letter writing club \
+	// </b> on campus to spread good will. No cursive required!</div> </div>'\
+	// ,"Campus Cursive"],
+
+	// [{lat:47.262095757492226, lng:-122.48109519481659},
+	// '<div id="content"> <div id="siteNotice"> \
+	// </div><h1>The Trail</h1>\
+	// <div id="bodyContent"> <p><b>\
+	// The student newspaper of the University of Puget Sound. \
+	// </b> Visit us at <a href="http://trail.pugetsound.edu">Trail.pugetsound.edu</a></div> </div>'\
+	// ,"The Trail"]
+
+
 	]
