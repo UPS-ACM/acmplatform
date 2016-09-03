@@ -25,21 +25,11 @@ var data = [
 	[{lat:47.262095757492226, lng:-122.48109519481659},
 	'<div id="content"> <div id="siteNotice"> </div><h1>Needlecrafts</h1><div id="bodyContent"> <p><b>Sewing, knitting, & crocheting! </b> All skill levels welcome!</div> </div>',"Needlecrafts for Charity"],
 
-	// [{lat:47.262195872227394, lng:-122.48110055923462},
-	// '<div id="content"> <div id="siteNotice"> \
-	// </div><h1>Campus Cursive</h1>\
-	// <div id="bodyContent"> <p><b>\
-	// A letter writing club \
-	// </b> on campus to spread good will. No cursive required!</div> </div>'\
-	// ,"Campus Cursive"],
+	[{lat:47.262195872227394, lng:-122.48110055923462},
+	'<div id="content"> <div id="siteNotice"> </div><h1>Campus Cursive</h1><div id="bodyContent"> <p><b> A letter writing club </b> on campus to spread good will. No cursive required!</div> </div>',"Campus Cursive"],
 
-	// [{lat:47.262095757492226, lng:-122.48109519481659},
-	// '<div id="content"> <div id="siteNotice"> \
-	// </div><h1>The Trail</h1>\
-	// <div id="bodyContent"> <p><b>\
-	// The student newspaper of the University of Puget Sound. \
-	// </b> Visit us at <a href="http://trail.pugetsound.edu">Trail.pugetsound.edu</a></div> </div>'\
-	// ,"The Trail"]
+	[{lat:47.262212254620586, lng:-122.4810254573822},
+	'<div id="content"> <div id="siteNotice"> </div><h1>The Trail</h1><div id="bodyContent"> <p><b>The student newspaper of the University of Puget Sound.</b> Visit us at <a href="http://trail.pugetsound.edu">Trail.pugetsound.edu</a></div> </div>',"The Trail"]
 
 
 	]
